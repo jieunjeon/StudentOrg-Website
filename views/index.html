@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Student Organization Website</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+  <!-- jQuery Version 1.11.1 -->
+  <script src="../js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="../js/bootstrap.min.js"></script>
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      padding-top: 48px;
+      /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+
+      /*font-size: 62.5%;*/
+      /*font-family: arial, sans-serif;*/
+    }
+
+
+    /* For Carousel*/
+    #nttLogo{
+      height: 100px;
+      width: 100px;
+    }
+
+    #websiteTitle{
+      font-size: 10em;
+      vertical-align: middle;
+      font-family: 'Pacifico', cursive;
+      padding-left: 15px;
+      color: #191970;
+    }
+    #websiteSlogan{
+      font-size: 5.4em;
+    }
+    /* Carousel Styling */
+    .slide1{
+      background-image: url('img/mainimage2.png');
+      height: 600px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    .slide2{
+      background-image: url('img/mainimage1.jpg');
+      height: 600px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    .carousel-caption h1{
+      font-size: 5.4em;
+      font-family: 'Pacifico', cursive;
+      padding-bottom: .4em;
+    }
+    .carousel-caption p{
+      font-size: 2em;
+    }
+
+
+  </style>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+      </head>
+
+      <body>
+
+        <!-- For loading navigation bar and login/signup -->
+        <script type="text/javascript">
+
+          $(document).ready(function () {
+            $("#navbar").load("navbar.html");
+          });
+
+          $(document).ready(function () {
+            $("#logIn").load("logIn.html");
+          });
+
+        </script>
+        
+        <div id="navbar">
+        </div>
+        <div id="logIn">
+        </div>
+
+
+
+        <!-- Page Content -->
+        <div class="container">
+
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <!-- <h1>Student organization template</h1> -->
+
+            </div>
+          </div>
+
+
+        </div>
+        <!-- /.container -->
+
+
+        <!-- Carousel -->
+        <!-- Surround everything with a div with the class carousel slide -->
+        <div id="theCarousel" class="carousel slide" data-ride="carousel">
+
+          <!-- Define how many slides to put in the carousel -->
+          <ol class="carousel-indicators">
+            <li data-target="#theCarousel" data-slide-to="0" class="active"> </li >
+              <li data-target="#theCarousel" data-slide-to="1"> </li>
+              <!-- <li data-target ="#theCarousel" data-slide-to="2"> </li> -->
+            </ol >
+
+            <!-- Define the text to place over the image -->
+            <div class="carousel-inner">
+              <div class="item active" >
+                <div class ="slide1"></div>
+                <div class="carousel-caption">
+                  <h1 style="font-size: 22px">Student org_1</h1>
+                  <p>Description</p>
+                  <p><a href="#" class="btn btn-primary btn-sm">Button</a></p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="slide2"></div>
+                <div class="carousel-caption">
+                  <h1 style="font-size: 22px">Student org_2</h1>
+                  <p>Description 2</p>
+                  <button type="submit" class = "btn btn-warning btn-lg">Be a member!</button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Set the actions to take when the arrows are clicked -->
+            <a class="left carousel-control" href="#theCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"> </span>
+            </a>
+            <a class="right carousel-control" href="#theCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+          </div>
+          <!-- Carousel -->
+
+
+
+        </body>
+
+        </html>

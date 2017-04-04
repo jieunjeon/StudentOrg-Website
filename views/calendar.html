@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Organization Website</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.css" type="text/css" rel="stylesheet" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+     padding-top: 100px;
+     /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+   }
+ </style>
+
+
+</head>
+<body>
+
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+      $("#navbar").load("navbar.html");
+    });
+
+    $(document).ready(function () {
+      $("#logIn").load("logIn.html");
+    });
+
+  </script>
+  
+  <div id="navbar">
+  </div>
+  <div id="logIn">
+  </div>
+
+
+  <!-- Calendar -->
+  <!--For javascript, calling modal= $('#myModal').modal(options) -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 align="center">Calendar</h1>
+
+        <br />
+        <div id="bootstrapModalFullCalendar"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="fullCalModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
+          <h4 id="modalTitle" class="modal-title"></h4>
+        </div>
+        <div id="modalBody" class="modal-body"></div>
+        <div class="modal-footer">
+          <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Edit Event</button>
+
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <a class="btn btn-primary" id="eventUrl" target="_blank">Event Page</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('#bootstrapModalFullCalendar').fullCalendar({
+        header: {
+          left: '',
+          center: 'prev title next',
+          right: ''
+        },
+        eventClick:  function(event, jsEvent, view) {
+          $('#modalTitle').html(event.title);
+          $('#modalBody').html(event.description);
+          $('#eventUrl').attr('href',event.url);
+          $('#fullCalModal').modal();
+          return false;
+        },
+        events:
+        [
+
+        {
+          "title":"Regular Meeting day",
+          "allday":"false",
+          "description":"<p>This is just a fake description.</p><p>The event button will link to UW Madison webpage</p>",
+          "start":moment(),
+          "end":moment(),
+          "url":"https://www.admissions.wisc.edu/"
+        },
+
+        {
+          "title":"CSS Meetup",
+          "allday":"false",
+          "description":"<p>This is just a fake description.</p><p>The event button will link to UW Madison webpage</p>",
+          "start":moment().add('days',4),
+          "end":moment().add('days',4),
+          "url":"https://www.admissions.wisc.edu/"
+        }
+        ]
+      });
+    });
+  </script>
+
+  <!-- Add event in calendar -->
+  <!-- Trigger the modal with a button -->
+  <br>
+  <br>
+  <p align="center">
+    <button  type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Event</button>
+  </p>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Event</h4>
+        </div>
+        <div class="modal-body">
+          <p>Add Event Below</p>
+          <div class="form-group">
+            <label for=" Email1msg">Date:</label>
+            <textarea class="form-control" rows="1"></textarea>
+
+            <label for=" Email1msg">Event Detail:</label>
+            <textarea class="form-control" rows="5"></textarea>
+
+            <label for=" Email1msg">Event Page Link:</label>
+            <textarea class="form-control" rows="1"></textarea>
+
+          </div>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-info">Save</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
